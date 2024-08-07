@@ -15,7 +15,7 @@ struct StepBarChart: View {
     var selectedStat: HealthMetricContext
     var chartData: [HealthMetric]
     
-    var selectedHealthMetric : HealthMetric? {
+    var selectedHealthMetric: HealthMetric? {
         guard let rawSelectedDate else { return nil }
         return chartData.first {
             Calendar.current.isDate(rawSelectedDate, inSameDayAs: $0.date)
