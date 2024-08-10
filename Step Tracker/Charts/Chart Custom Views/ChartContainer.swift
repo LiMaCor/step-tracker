@@ -47,6 +47,8 @@ struct ChartContainer<Content: View>: View {
         }
         .foregroundStyle(.secondary)
         .padding(.bottom, 12)
+        .accessibilityHint("Tap for data in list view")
+        .accessibilityRemoveTraits(.isButton)
     }
     
     var titleView: some View {
@@ -58,6 +60,9 @@ struct ChartContainer<Content: View>: View {
             Text(subtitle)
                 .font(.caption)
         }
+        .accessibilityAddTraits(.isHeader)
+        .accessibilityLabel(accessibilityLabel)
+        .accessibilityElement(children: .ignore)
     }
     
     var isNav: Bool {
@@ -112,6 +117,19 @@ struct ChartContainer<Content: View>: View {
             "Avg: \(average.formatted(.number.precision(.fractionLength(1)))) lbs"
         case .weightDiffBar:
             "Per Weekday (Last 28 Days)"
+        }
+    }
+    
+    var accessibilityLabel: String {
+        switch chartType {
+        case .stepBar(let average):
+            "Bar chart, step count, last 28 days, average steps per day: \(average) steps"
+        case .stepWeekdayPie:
+            "Pie chart, average steps per weekday"
+        case .weightLine(let average):
+            "Line chart, weight, average weight: \(average.formatted(.number.precision(.fractionLength(1)))) pounds, goal weight: 155 pounds"
+        case .weightDiffBar:
+            "Bar chart, average weight difference per weekday"
         }
     }
 }
