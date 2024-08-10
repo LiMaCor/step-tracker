@@ -24,11 +24,7 @@ struct StepBarChart: View {
     }
     
     var body: some View {
-        ChartContainer(title: "Steps",
-                       symbol: "figure.walk",
-                       subtitle: "Avg: \(averageSteps.formatted()) Steps",
-                       context: .steps,
-                       isNav: true) {
+        ChartContainer(chartType: .stepBar(average: averageSteps)) {
             Chart {
                 if let selectedData {
                     ChartAnnotationView(data: selectedData, context: .steps)
