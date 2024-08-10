@@ -12,7 +12,8 @@ Step Tracker also allows you to upload new step or weight data to the Apple Heal
 * Git & GitHub
 
 # Animated Swift Charts
-https://github.com/LiMaCor/step-tracker/blob/1af2232895abc0225ee6d1a3f370b335d4f4a659/Step%20Tracker/Assets.xcassets/readme-animated-charts.dataset/readme-animated-charts.mov
+https://github.com/user-attachments/assets/8391d638-fc60-4f11-82a3-99b220b76b9b
+
 
 # I'm Most Proud Of...
 The average weight difference per day of the week bar chart. Determining which day of the week were problem days for someone trying to lose weight struck me as a great insight to surface from the weight data. 
